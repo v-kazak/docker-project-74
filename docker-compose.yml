@@ -1,6 +1,9 @@
 services:
   app:
-    image: app
-    volumes:
-      - ./app:/app
-    build: .
+    image: vetall0778/docker-project-74
+    build:
+      context: .
+      dockerfile: Dockerfile.production
+    environment:
+      - NODE_ENV=development
+    command: make test
