@@ -3,7 +3,7 @@ version: "3"
 services:
   app:
     build: .
-    image: hexletcomponents/devops-example-app
+    image: vikazak/docker-project-74
 
   caddy:
     build:

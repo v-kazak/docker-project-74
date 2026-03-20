@@ -1,16 +1,12 @@
-localhost, devops-example.test {
-	tls internal
+:80 {
+    handle /images/* {
+        file_server
+        root * /app/public
+    }
 
-	handle /images/* {
-		file_server
-		root * /app/public
-	}
+    reverse_proxy app:3000
 
-	handle {
-		reverse_proxy app:3000
-	}
-
-	log {
-		# format single_field common_log
-	}
+    log {
+        # format single_field common_log
+    }
 }
